@@ -13,12 +13,11 @@ const Home = () => {
 			<input type="text" placeholder=" Introduce tu texto aqui" onKeyDown={
 				(e) => {
 					if(e.key === 'Enter'){
-					
 					setHistory([...history,e.target.value])}
 				}
 			}/>
 			<ul class="list-group">
-				{history.map( h =>{return<li class="list-group-item">{h}<span><i class="fa fa-trash"></i></span></li>})}
+				{ history.map( h => {return<li class="list-group-item"> {h} <span> <i class="fa fa-trash" onClick={(e) => { removeItem(e.target.value)}}> </i> </span> </li> })}
 				
 			</ul>
 
