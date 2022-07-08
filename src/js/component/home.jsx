@@ -18,7 +18,7 @@ const Home = () => {
 				}
 			}/>
 			<ul className="list-group ">
-				{ history.map( h => {return<li className="list-group-item" > {h}<button type="button" class="btn-close" aria-label="Close"onClick={
+				{ history.map( (h,index) => {return<li className="list-group-item" key={index} > {h}<button type="button" className="btn-close" aria-label="Close"onClick={
 					(e) =>{e.target.parentElement.style.display ="none"}}></button></li> })}
 				
 			</ul>
