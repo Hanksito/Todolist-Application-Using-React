@@ -7,14 +7,20 @@ import rigoImage from "../../img/rigo-baby.jpg";
 const Home = () => {
 	
 	const[history,setHistory]=useState([])
+	const [val, setVal] = useState();
+	
+
 
 	return (
 		<div className="container text-center shadow p-3 mb-5 bg-body rounded rounded-bottom">
 			<h1 className="fw-lighter">Todos</h1>
-			<input type="text" placeholder=" Introduce tu texto aqui" onKeyDown={
+			<input type="text" onChange={(e) =>{ setVal(e.target.value)}} placeholder=" Introduce tu texto aqui"value={val} onKeyDown={
 				(e) => {
-					if(e.key === 'Enter'){
-					setHistory([...history,e.target.value])}
+					let arr= Array.from(e.target.value)
+					let filterarr = arr.filter(caracters => caracters !== " ")
+					if(e.key === 'Enter' && filterarr.length !== 0 && e.target.value !== ""){
+					setHistory([...history,e.target.value])
+					setVal("")}
 				}
 			}/>
 			<ul className="list-group ">
