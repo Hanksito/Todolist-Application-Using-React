@@ -10,3 +10,10 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+button{
+    float: right;
+}
+.list-group-item{
+   text-align: left;
+
+}
