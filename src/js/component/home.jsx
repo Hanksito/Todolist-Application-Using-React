@@ -12,7 +12,7 @@ const Home = () => {
 
 
 	return (
-		<div className="container text-center shadow p-3 mb-5 bg-body rounded rounded-bottom">
+		<div className="container text-center ">
 			<h1 className="fw-lighter">Todos</h1>
 			<input type="text" onChange={(e) =>{ setVal(e.target.value)}} placeholder=" Introduce tu texto aqui"value={val} onKeyDown={
 				(e) => {
