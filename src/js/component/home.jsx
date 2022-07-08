@@ -8,18 +8,13 @@ const Home = () => {
 	
 	const[history,setHistory]=useState([])
 	const deleteItem =()=>{
-		let borrar = document.querySelectorAll(".btn-close");
-		
+		let borrar = document.querySelectorAll(".fa-trash");
 		for (let x of borrar) {
 		  x.addEventListener("click", function (e) { 
 			let item = e.target.parentElement; 
-		   
 			let item2 = item.parentElement;  
-			
-			//child[5].removeChild(item2);
-			item2.style.display = "none"; })
+			item2.style.display = "none";})
 			 }
-	  
 	  }
 	return (
 		<div className="container text-center">
@@ -30,8 +25,8 @@ const Home = () => {
 					setHistory([...history,e.target.value])}
 				}
 			}/>
-			<ul class="list-group">
-				{ history.map( h => {return<li class="list-group-item" ><button type="button" class="btn-close" aria-label="Close" onClick={deleteItem}></button> {h}</li> })}
+			<ul className="list-group">
+				{ history.map( h => {return<li className="list-group-item" > {h}<span><i className="fa fa-trash"onClick={deleteItem}></i></span></li> })}
 				
 			</ul>
 
